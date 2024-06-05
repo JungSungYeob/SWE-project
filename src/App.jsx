@@ -5,6 +5,7 @@ import Join from './pages/auth/join/Join'
 import CoinPrice from './pages/market/coinPrice/coinPrice';
 import MarketTrend from './pages/market/marketTrend/marketTrend';
 import Board from './pages/market/board/board';
+import MainPage from './pages/mainPage/MainPage'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/coinprice" element={< CoinPrice />} />
         <Route path="/markettrend" element={< MarketTrend />} />
         <Route path="/board" element={< Board />} />
+        <Route path="/mainpage" element={< MainPage />} />
       </Routes>
     </BrowserRouter>
   )
