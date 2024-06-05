@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import styled from "styled-components";
 
 const CoinPriceSheet = styled.div`
@@ -22,6 +22,13 @@ const PriceGraph = styled.div`
     border-radius: 10px;
     height: 400px;
     margin: 20px 0;
+    span {
+        display: block;
+        text-align: left;
+        margin: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
 `;
 
 const CoinList = styled.div`
@@ -53,19 +60,83 @@ const FlexBox = styled.div`
     display: flex;
 `
 const HeaderBox = styled.div`
-width: 100%;
-padding-bottom: 10px;
-//border-bottom: 1px solid #000;
-margin-bottom: 10px;
+    width: 100%;
+    padding-bottom: 10px;
+    //border-bottom: 1px solid #000;
+    margin-bottom: 10px;
 
-span {
-    display: block;
-    text-align: left;
-    font-weight: bold;
-    margin: 5px 0;
-    font-size: 20px;
-}
+    span {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin: 5px 0;
+        font-size: 20px;
+    }
 `
+
+const CoinConclusion = styled.div`
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    height: 400px;
+    margin: 20px 0;
+    width: calc(100% - 20px);
+`
+
+
+
+const OrderFormContainer = styled.div`
+    background-color: #D0D0D0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    margin: 20px auto;
+    height: 70%;
+`;
+
+const Tabs = styled.div`
+    display: flex;
+    margin-bottom: 10px;
+`;
+
+const Tab = styled.div`
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: ${props => (props.active ? "red" : "black")};
+    border-bottom: ${props => (props.active ? "2px solid red" : "1px solid black")};
+`;
+
+const FormSection = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #E0E0E0;
+    border-radius: 5px;
+`;
+
+const Input = styled.input`
+    flex: 2;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+`;
+
+const Button = styled.button`
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+`;
+
+
 
 const CoinPrice = () => {
     const coins = [
@@ -80,6 +151,8 @@ const CoinPrice = () => {
         { name: "Coin 9", price: "현재가 9" },
     ];
 
+    const [activeTab, setActiveTab] = useState("buy");
+    
     return (
         <>
             <CoinPriceSheet>
@@ -90,8 +163,31 @@ const CoinPrice = () => {
                 </HeaderBox>
                 <FlexBox>
                     <LeftContainer>
-                        <PriceGraph />
-                        <PriceGraph />
+                        <PriceGraph>
+                            <span>시세 그래프</span>
+                        </PriceGraph>
+                        <PriceGraph>
+                            <span>코인 주문(시장가)</span>
+                            <OrderFormContainer>
+                                <Tabs>
+                                    <Tab active={activeTab === "buy"} onClick={() => setActiveTab("buy")}>
+                                        매수
+                                    </Tab>
+                                    <Tab active={activeTab === "sell"} onClick={() => setActiveTab("sell")}>
+                                        매도
+                                    </Tab>
+                                </Tabs>
+                                <FormSection>
+                                    <span>주문 가능</span>
+                                    <span>현재 예치금 (KWR)</span>
+                                </FormSection>
+                                <FormSection>
+                                    <span>주문 총액(KWR)</span>
+                                    <Input type="text" placeholder="0" />
+                                </FormSection>
+                                <Button>{activeTab === "buy" ? "매수" : "매도"}</Button>
+                            </OrderFormContainer>
+                        </PriceGraph>
                     </LeftContainer>
                     <CoinList>
                         {coins.map((coin, index) => (
@@ -102,6 +198,7 @@ const CoinPrice = () => {
                         ))}
                     </CoinList>
                 </FlexBox>
+                <CoinConclusion />
             </CoinPriceSheet>
         </>
     );
