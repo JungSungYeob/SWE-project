@@ -21,7 +21,7 @@ const Join = () => {
     e.preventDefault();
     console.log(`${userID} ${userPW} ${userRePW} ${userName} ${userPhone} ${userNickname}`)
     if(userPW != userRePW){
-      alert('패스워드가 일치하지 않습니다?');
+      alert('패스워드가 일치하지 않습니다??');
       return;
     }
   }
