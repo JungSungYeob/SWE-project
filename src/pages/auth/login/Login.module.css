@@ -1,0 +1,15 @@
+.container{
+    display: grid;
+    justify-content: center;
+}
+
+.login-form{
+    width: 500px;
+    display: grid;
+    justify-content: center;
+}
+
+.login-form button{
+    margin:10px;
+    background-color: green;
+}
