@@ -22,6 +22,10 @@ const PriceGraph = styled.div`
     border-radius: 10px;
     height: 400px;
     margin: 20px 0;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
     span {
         display: block;
         text-align: left;
@@ -35,7 +39,7 @@ const CoinList = styled.div`
     width: 35%;
     background-color: #F0F0F0;
     border-radius: 10px;
-    height: 800px;
+    height: 880px;
     margin: 20px;
     padding: 20px;
     overflow-y: auto; // Add scroll if list is too long
@@ -77,9 +81,28 @@ const HeaderBox = styled.div`
 const CoinConclusion = styled.div`
     background-color: #F0F0F0;
     border-radius: 10px;
-    height: 400px;
+    height: 600px;
     margin: 20px 0;
-    width: calc(100% - 20px);
+    width: calc(100% - 60px);
+    padding: 20px;
+    overflow-y: auto;
+    span {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin: 5px 10px;
+        font-size: 16px;
+    }
+`
+
+const ConclusionSection = styled.div`
+    display: flex;
+    color: red;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #F0F0F0;
+    border-radius: 5px;
 `
 
 
@@ -137,6 +160,14 @@ const Button = styled.button`
 `;
 
 
+const CandleStick = styled.div`
+    background-color: #D0D0D0;
+    border-radius: 10px;
+    height: 350px;
+    margin: 20px 0;
+    width: 100%;
+`
+
 
 const CoinPrice = () => {
     const coins = [
@@ -165,6 +196,7 @@ const CoinPrice = () => {
                     <LeftContainer>
                         <PriceGraph>
                             <span>시세 그래프</span>
+                            <CandleStick></CandleStick>
                         </PriceGraph>
                         <PriceGraph>
                             <span>코인 주문(시장가)</span>
@@ -198,7 +230,15 @@ const CoinPrice = () => {
                         ))}
                     </CoinList>
                 </FlexBox>
-                <CoinConclusion />
+                <CoinConclusion>
+                    <span>코인 체결 기록</span>
+                    <ConclusionSection>
+                        <span>체결 시간</span>
+                        <span>체결 가격</span>
+                        <span>체결량</span>
+                        <span>체결금액</span>
+                    </ConclusionSection>
+                </CoinConclusion>
             </CoinPriceSheet>
         </>
     );
