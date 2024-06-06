@@ -1,0 +1,36 @@
+.coin-news{
+    text-align: left;
+    padding: 10px;
+    color: black;
+}
+
+.coin-news h3{
+    margin:0px
+}
+
+.news-frame{
+    background-color: lightgray;
+    height: 80px;
+    border-radius: 20px;
+}
+
+.news-frame h3{
+    margin: 0px;
+    padding: 5px 20px 0px 20px;
+}
+
+.news-frame p{
+    font-size: 13px;
+    padding: 0px 20px;
+    margin: 0px;
+    color: rgb(60, 60, 60)
+}
+
+.news-frame{
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+.news-frame:hover{
+    text-decoration: underline;
+}
