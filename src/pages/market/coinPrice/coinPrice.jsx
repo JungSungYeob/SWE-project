@@ -1,5 +1,6 @@
 import {React, useState} from "react";
 import styled from "styled-components";
+import ApexCharts from "apexcharts";
 
 const CoinPriceSheet = styled.div`
     //display: flex;
@@ -196,7 +197,9 @@ const CoinPrice = () => {
                     <LeftContainer>
                         <PriceGraph>
                             <span>시세 그래프</span>
-                            <CandleStick></CandleStick>
+                            <CandleStick>
+                                
+                            </CandleStick>
                         </PriceGraph>
                         <PriceGraph>
                             <span>코인 주문(시장가)</span>
