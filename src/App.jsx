@@ -18,6 +18,7 @@ function App() {
         <Route path="/markettrend" element={< MarketTrend />} />
         <Route path="/board" element={< Board />} />
         <Route path="/mainpage" element={< MainPage />} />
+        <Route path="/" element={< MainPage />} />
       </Routes>
     </BrowserRouter>
   )
