@@ -12,13 +12,13 @@ const Login = () => {
     movePage('/join');
   }
 
-
   const [userID, setUserID] = useState('');
   const [userPW, setUserPW] = useState('');
 
   const submitLogin = async (e) => {
     e.preventDefault();
     console.log(userID + userPW);
+    movePage('/mainpage')
   }
 
 

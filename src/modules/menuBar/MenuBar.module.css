@@ -3,6 +3,7 @@ ul {list-style: none;}
 .menu-bar{
     display: flex;
     align-items: baseline;
+    border-bottom: 1px solid white;
 }
 
 .menu-page{
