@@ -6,6 +6,7 @@ import CoinPrice from './pages/market/coinPrice/coinPrice';
 import MarketTrend from './pages/market/marketTrend/marketTrend';
 import Board from './pages/market/board/board';
 import MainPage from './pages/mainPage/MainPage'
+import BoardDetail from './pages/market/board/boardDetail';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/markettrend" element={< MarketTrend />} />
         <Route path="/board" element={< Board />} />
         <Route path="/mainpage" element={< MainPage />} />
+        <Route path="/board/:id" element={< BoardDetail />} />
         <Route path="/" element={< MainPage />} />
       </Routes>
     </BrowserRouter>
