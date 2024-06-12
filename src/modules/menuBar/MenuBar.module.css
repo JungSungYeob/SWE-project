@@ -1,0 +1,51 @@
+ul {list-style: none;}
+
+.menu-bar{
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px solid white;
+}
+
+.menu-page{
+    display: flex;
+    justify-content: left;
+}
+
+.menu-page ul li{
+    font-size: 150%;
+    font-weight: bold;
+    display: inline-block;
+    width: 150px;
+}
+
+.menu-page ul li a{
+    color:white;
+    cursor: pointer;
+    font-size: 17px;
+}
+.menu-page ul li a:hover{
+    font-weight: bolder;
+}
+
+.user-fnc{
+    width: 430px;
+    display: flex;
+    justify-content: right;
+}
+
+.user-fnc ul li{
+    font-size: 100%;
+    font-weight: bold;
+    display: inline-block;
+    width: 80px
+}
+
+.user-fnc ul li a{
+    color:white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.user-fnc ul li a:hover{
+    font-weight: bolder;
+}

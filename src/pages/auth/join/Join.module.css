@@ -1,0 +1,21 @@
+.container{
+    display: grid;
+    justify-content: center;
+}
+
+.container h2{
+    text-align: left;
+}
+
+.login-form{
+    width: 500px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-form button{
+    margin:10px;
+    background-color: green;
+    width: 100px;
+}

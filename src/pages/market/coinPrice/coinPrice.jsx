@@ -1,6 +1,7 @@
 import {React, useState} from "react";
 import styled from "styled-components";
 import ApexCharts from "apexcharts";
+import MenuBar from "../../../modules/menuBar/MenuBar";
 
 const CoinPriceSheet = styled.div`
     //display: flex;
@@ -187,6 +188,7 @@ const CoinPrice = () => {
     
     return (
         <>
+            <MenuBar/>
             <CoinPriceSheet>
                 <HeaderBox>
                     <span>코인 이름</span>
